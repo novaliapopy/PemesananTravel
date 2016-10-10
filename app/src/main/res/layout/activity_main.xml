@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -41,7 +40,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="201dp"
             android:text="Nama"
             android:textColor="#000000" />
 
@@ -85,7 +84,6 @@
             android:text="No.Telp"
             android:textColor="#000000" />
 
-
         <EditText
             android:id="@+id/editTextNt"
             android:layout_width="match_parent"
@@ -102,15 +100,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editTextNt"
-            android:textColor="#000000" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/spinnerAsal"
             android:text="Asal"
             android:textColor="#000000" />
 
@@ -125,12 +114,12 @@
             android:spinnerMode="dropdown" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/spinnerTujuan"
+            android:layout_below="@+id/spinnerAsal"
             android:text="Tujuan"
             android:textColor="#000000" />
 
@@ -144,6 +133,82 @@
             android:entries="@array/kota"
             android:spinnerMode="dropdown" />
 
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinnerTujuan"
+            android:text="Keberangkatan"
+            android:textColor="#000000" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupKb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView7"
+            android:layout_gravity="bottom|left">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Pagi" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Siang" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Malam" />
+
+        </RadioGroup>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/radioGroupKb"
+            android:text="Fasilitas"
+            android:textColor="#000000" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView7"
+            android:layout_alignRight="@+id/textView7"
+            android:layout_below="@+id/textView8"
+            android:checked="false"
+            android:text="Travel" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_alignTop="@+id/checkBox"
+            android:checked="false"
+            android:text="Makan" />
 
         <Button
             android:id="@+id/buttonPesan"
@@ -155,13 +220,13 @@
             android:text="PESAN"
             android:textColor="#FFFFFF" />
 
-
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/buttonPesan"
-            android:text="Nama" />
+            android:text="Nama"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/Hnama"
@@ -230,6 +295,43 @@
             android:layout_below="@+id/textView13"
             android:text="" />
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Htujuan"
+            android:text="Keberangkatan"
+            android:textColor="#000000" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/Hkeberangkatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/textView14"
+            android:layout_below="@+id/textView15"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Hkeberangkatan"
+            android:text="Fasilitas"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Hfasilitas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/textView14"
+            android:layout_below="@+id/textView15"
+            android:text="" />
+
+    </RelativeLayout>
 </ScrollView>

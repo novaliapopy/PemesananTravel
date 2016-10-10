@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -14,10 +17,18 @@ public class MainActivity extends AppCompatActivity {
     EditText EtAlamat;
     EditText EtTlp;
     Button BPesan;
+    Spinner asal, tujuan;
     TextView Hnam;
     TextView Hal;
-    TextView Htlp, hasal, htujuan;
-    Spinner asal, tujuan;
+    TextView Htlp, hasal, htujuan, hkeberangkatan, hfasilitas;
+    RadioGroup kb;
+    RadioButton pagi, siang, malam;
+    CheckBox travel, makan;
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
 
 
     @Override
@@ -35,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
         tujuan = (Spinner) findViewById(R.id.spinnerTujuan);
         hasal = (TextView) findViewById(R.id.textView12);
         htujuan = (TextView) findViewById(R.id.textView13);
+        hkeberangkatan = (TextView) findViewById(R.id.textView14);
+        hfasilitas = (TextView) findViewById(R.id.textView15);
+        kb = (RadioGroup) findViewById(R.id.radioGroupKb);
+        pagi = (RadioButton) findViewById(R.id.radioButton);
+        siang = (RadioButton) findViewById(R.id.radioButton2);
+        malam = (RadioButton) findViewById(R.id.radioButton3);
+        travel = (CheckBox) findViewById(R.id.checkBox);
+        makan = (CheckBox) findViewById(R.id.checkBox2);
 
 
         findViewById(R.id.buttonPesan).setOnClickListener(new View.OnClickListener() {
@@ -57,11 +76,23 @@ public class MainActivity extends AppCompatActivity {
 
                                                               }
 
-
-                                                              private boolean isValid()
-
-                                                              {
+            private boolean isValid() {
                                                                   boolean valid = true;
+                String hasil = null;
+                if (pagi.isChecked()) {
+                    hasil = pagi.getText().toString();
+                    hkeberangkatan.setText("Keberangkatan   : Pagi");
+                    valid = true;
+                } else if (siang.isChecked()) {
+                    hasil = siang.getText().toString();
+                    hkeberangkatan.setText("Keberangkatan    : Siang");
+                    valid = true;
+                } else if (malam.isChecked()) {
+                    hasil = malam.getText().toString();
+                    hkeberangkatan.setText("Keberangkatan    : Malam");
+                    valid = true;
+                }
+
                                                                   String nama = EtNama.getText().toString();
                                                                   String alamat = EtAlamat.getText().toString();
                                                                   String no = EtTlp.getText().toString();
@@ -88,14 +119,24 @@ public class MainActivity extends AppCompatActivity {
                                                                       Htlp.setText(no);
                                                                   }
 
-                                                                  hasal.setText("Asal \n " + asal.getSelectedItem().toString());
+
+                hasal.setText("Asal \n " + asal.getSelectedItem().toString());
                                                                   htujuan.setText("Tujuan \n " + tujuan.getSelectedItem().toString());
+
+
+                String orga = "Fasilitas yang dipilih \n";
+                int startlen = orga.length();
+                if (travel.isChecked()) orga += travel.getText() + " ";
+                if (makan.isChecked()) orga += makan.getText() + " ";
+
+                if (orga.length() == startlen) orga += "Tidak ada";
+
+                hfasilitas.setText(orga);
 
                                                                   return false;
                                                               }
                                                           }
+
         );
     }
 }
-
-
