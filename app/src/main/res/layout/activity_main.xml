@@ -85,6 +85,7 @@
             android:text="No.Telp"
             android:textColor="#000000" />
 
+
         <EditText
             android:id="@+id/editTextNt"
             android:layout_width="match_parent"
@@ -93,6 +94,55 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView4"
             android:inputType="numberSigned" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editTextNt"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinnerAsal"
+            android:text="Asal"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinnerAsal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView5"
+            android:entries="@array/kota"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinnerTujuan"
+            android:text="Tujuan"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinnerTujuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView6"
+            android:entries="@array/kota"
+            android:spinnerMode="dropdown" />
 
 
         <Button
@@ -148,6 +198,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView11"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Htelp"
+            android:text="Asal"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Hasal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView12"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Hasal"
+            android:text="Tujuan"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/Htujuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView13"
             android:text="" />
 
 

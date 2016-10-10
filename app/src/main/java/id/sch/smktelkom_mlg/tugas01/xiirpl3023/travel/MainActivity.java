@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -15,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
     Button BPesan;
     TextView Hnam;
     TextView Hal;
-    TextView Htlp;
+    TextView Htlp, hasal, htujuan;
+    Spinner asal, tujuan;
 
 
     @Override
@@ -29,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         Hnam = (TextView) findViewById(R.id.Hnama);
         Hal = (TextView) findViewById(R.id.Halamat);
         Htlp = (TextView) findViewById(R.id.Htelp);
+        asal = (Spinner) findViewById(R.id.spinnerAsal);
+        tujuan = (Spinner) findViewById(R.id.spinnerTujuan);
+        hasal = (TextView) findViewById(R.id.textView12);
+        htujuan = (TextView) findViewById(R.id.textView13);
 
 
         findViewById(R.id.buttonPesan).setOnClickListener(new View.OnClickListener() {
@@ -81,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
                                                                   } else {
                                                                       Htlp.setText(no);
                                                                   }
+
+                                                                  hasal.setText("Asal \n " + asal.getSelectedItem().toString());
+                                                                  htujuan.setText("Tujuan \n " + tujuan.getSelectedItem().toString());
+
                                                                   return false;
                                                               }
                                                           }

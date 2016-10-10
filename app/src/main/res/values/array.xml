@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kota">
+        <item>Magetan</item>
+        <item>Malang</item>
+        <item>Blitar</item>
+        <item>Pasuruan</item>
+        <item>Surabaya</item>
+        <item>Gresik</item>
+    </string-array>
+</resources>
